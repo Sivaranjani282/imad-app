@@ -2,7 +2,7 @@ var button = document.getElementById('counter');
 var counter = 0;
 button.onclick = function(){
     
-    //Make a request to the counter endpoint
+    //Create a request object
     var request = new XMLHttpRequest();
     //Capture the response and store it in a variable
     request.onreadystatechange = function(){
@@ -15,4 +15,7 @@ button.onclick = function(){
         }
         }
     };
-}
+    // Make the request
+    request.open('GET','http://ranjani38eee.imad.hasura-app.io/counter',true);
+    request.send(null);
+};
